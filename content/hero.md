@@ -1,5 +1,5 @@
 ---
-title: Find the Perfect Space for Productivity
+title: Find the Perfect Spacer for Productivity
 subtitle: Transform your work experience with ABB's state-of-the-art workspace
   solutions designed for innovation, collaboration, and success.
 cta:
