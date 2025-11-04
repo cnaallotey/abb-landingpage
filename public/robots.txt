@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and development pages
+Disallow: /admin
+Disallow: /content
+Disallow: /_nuxt
+
+# Allow search engines to index all other pages
+Allow: /
+Allow: /services
+Allow: /about
+Allow: /contact
+Allow: /spaces
+Allow: /membership
+
+# Sitemap location
+Sitemap: https://workspace.abb.com/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
