@@ -18,7 +18,7 @@
           :class="[
             'group relative block rounded-xl cursor-pointer transition-all duration-300',
             selectedLocation === 'airport' 
-              ? 'ring-4 ring-red-500 scale-105' 
+              ? 'ring-4 ring-red-500' 
               : 'hover:scale-105'
           ]"
           @click="selectLocation('airport')"
@@ -56,7 +56,7 @@
             <div class="flex flex-col h-full p-4 sm:p-6">
               <h3 class="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/80">
                 {{ branchesData?.find((b: any) => b.location === 'airport')?.title || 'Airport Branch' }}
-                <UBadge v-if="selectedLocation === 'airport'" color="green" class="ml-2">
+                <UBadge v-if="selectedLocation === 'airport'" color="green" class="ml-2 bg-red-200 text-black">
                   Selected
                 </UBadge>
               </h3>
@@ -72,7 +72,7 @@
           :class="[
             'group relative block rounded-xl cursor-pointer transition-all duration-300',
             selectedLocation === 'tema' 
-              ? 'ring-4 ring-red-500 scale-105' 
+              ? 'ring-4 ring-red-500' 
               : 'hover:scale-105'
           ]"
           @click="selectLocation('tema')"
@@ -433,6 +433,18 @@
                 </div>
               </UCard>
             </div>
+            <div class="flex justify-center w-full mt-10">
+              <UButton 
+          size="xl" 
+          color="white" 
+          variant="solid"
+          :icon="ctaData?.meta?.buttons?.form?.icon || 'i-heroicons-book-open'"
+          :to="servicesData?.meta.brochure_download_link || '#'"
+          class="text-white bg-red-600 px-10 inline-flex mt-10 mx-auto justify-center items-center py-4 text-base rounded-full hover:bg-red-700 transition-all duration-300"
+        >
+          Download Full Services Brochure
+        </UButton>
+            </div>
             
             <!-- <div class="mt-8 p-6 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200">
               <div class="flex items-start gap-3">
@@ -453,7 +465,7 @@
 <script setup lang="ts">
 // Fetch all branch data
 const { data: branchesData } = await useAsyncData('branches', () => queryCollection('branches').all())
-
+const { data: servicesData } = await useAsyncData('services', () => queryCollection('services').first())
 const selectedLocation = ref<'airport' | 'tema' | null>(null)
 const activeTab = ref('virtual-office')
 

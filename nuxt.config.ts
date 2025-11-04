@@ -30,10 +30,12 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'Africa Business Bureau - Premium Workspace Solutions',
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/images/ABB-logo.png' }],
       meta: [
         {
           name: 'description',
           content: 'Discover Africa Business Bureau\'s state-of-the-art workspace solutions designed for innovation, collaboration, and productivity.'
+
         }
       ]
     }
@@ -60,11 +62,6 @@ export default defineNuxtConfig({
     gzip: true,
     routes: [
       '/',
-      '/services',
-      '/about',
-      '/contact',
-      '/spaces',
-      '/membership'
     ]
   },
 

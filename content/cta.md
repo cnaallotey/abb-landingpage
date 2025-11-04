@@ -1,6 +1,6 @@
 ---
-title: "Ready to Experience the Future of Work?"
-description: "Join leading teams who have transformed their productivity and innovation capabilities with ABB's workspace solutions."
+title: "Ready to Experience the Future of Work? Send Us a Message"
+description: "Join leading teams who have transformed their productivity and innovation capabilities with ABB's workspace solutions. Tell us what you need and we will handle the rest"
 buttons:
   primary:
     text: "Book Your Space Now"

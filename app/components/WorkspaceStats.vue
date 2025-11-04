@@ -37,7 +37,7 @@
           </div>
           
           <!-- CTA Button -->
-         <AppPrimaryButton class="w-full md:w-fit">
+         <AppPrimaryButton class="w-full md:w-fit" @click="navigateTo('/#services')">
             {{ statsData?.cta?.text || 'Explore Our Spaces' }}
           </AppPrimaryButton>
         </div>

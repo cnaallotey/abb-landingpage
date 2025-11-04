@@ -6,10 +6,13 @@
           <!-- Company Info -->
           <div>
             <div class="flex items-center space-x-3 mb-4">
-              <div class="w-8 h-8 bg-red-600 rounded flex items-center justify-center">
-                <span class="text-white font-bold text-sm">ABB</span>
+              <div class=" rounded flex items-center justify-center">
+                <NuxtImg
+                  src="/images/ABB-logo.png"
+                  alt="ABB Workspace"
+                  class="w-full h-28 object-contain"
+                />
               </div>
-              <span class="font-bold text-xl">Workspace</span>
             </div>
             <p class="text-gray-400 text-sm mb-4">
               Innovating the future of collaborative workspaces with cutting-edge technology and sustainable design.
@@ -17,23 +20,26 @@
             <div class="flex space-x-4">
               <UButton 
                 variant="ghost" 
-                size="xs" 
+                size="lg" 
                 icon="i-simple-icons-linkedin"
-                to="https://linkedin.com/company/abb"
+                color="red"
+                to="https://www.linkedin.com/company/africa-business-bureau/"
                 target="_blank"
               />
               <UButton 
                 variant="ghost" 
-                size="xs" 
-                icon="i-simple-icons-twitter"
-                to="https://twitter.com/abb"
+                size="lg" 
+                color="red"
+                icon="i-simple-icons-facebook"
+                to="https://web.facebook.com/AfricanBusinessBureau/"
                 target="_blank"
               />
               <UButton 
                 variant="ghost" 
-                size="xs" 
+                size="lg" 
+                color="red"
                 icon="i-simple-icons-instagram"
-                to="https://instagram.com/abb"
+                to="https://www.instagram.com/abb.africa/"
                 target="_blank"
               />
             </div>
@@ -70,15 +76,15 @@
             <div class="space-y-3">
               <div class="flex items-center space-x-3">
                 <UIcon name="i-heroicons-map-pin" class="w-4 h-4 text-red-500" />
-                <span class="text-gray-400 text-sm">123 Business Ave, Tech City, TC 12345</span>
+                <span class="text-gray-400 text-sm">BF 254, Paa Grant St. Community 10, Tema. GPS: GT-123-9133</span>
               </div>
               <div class="flex items-center space-x-3">
                 <UIcon name="i-heroicons-phone" class="w-4 h-4 text-red-500" />
-                <span class="text-gray-400 text-sm">+1 (555) 123-4567</span>
+                <span class="text-gray-400 text-sm">0302970752 / 0302907459</span>
               </div>
               <div class="flex items-center space-x-3">
                 <UIcon name="i-heroicons-envelope" class="w-4 h-4 text-red-500" />
-                <span class="text-gray-400 text-sm">hello@abbworkspace.com</span>
+                <span class="text-gray-400 text-sm">info@africabusinessbureau.com</span>
               </div>
             </div>
           </div>
@@ -91,16 +97,6 @@
           <p class="text-gray-400 text-sm mb-4 md:mb-0">
             © 2025 ABB Workspace. All rights reserved.
           </p>
-          <div class="flex space-x-6">
-            <NuxtLink 
-              v-for="legal in legalLinks" 
-              :key="legal.to"
-              :to="legal.to"
-              class="text-gray-400 hover:text-white text-sm transition-colors"
-            >
-              {{ legal.label }}
-            </NuxtLink>
-          </div>
         </div>
       </div>
     </UContainer>
@@ -109,12 +105,11 @@
 
 <script setup lang="ts">
 const quickLinks = [
-  { to: '/#features', label: 'Services' },
-  { to: '/#showcase', label: 'Spaces' },
-  { to: '/#benefits', label: 'Membership' },
-  { to: '/#testimonials', label: 'Reviews' },
-  { to: '/contact', label: 'Contact' },
-  { to: '/about', label: 'About Us' }
+  { to: '/#services', label: 'Services' },
+  { to: '/#locations', label: 'Spaces' },
+  { to: '/#benefits', label: 'Membership Benefits' },
+  { to: '/#contact', label: 'Contact' },
+  { to: '/#about', label: 'About Us' }
 ]
 
 const services = [

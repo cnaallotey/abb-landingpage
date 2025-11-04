@@ -2,7 +2,7 @@
   <section id="features" class="bg-white dark:bg-gray-900">
     <UContainer class="max-w-screen-2xl mx-auto">
       <!-- Section Header -->
-      <div class="text-center mb-16">
+      <div class="text-center mb-8 md:mb-16">
         <AppHeadingTitle class="text-center">
           {{ servicesData?.meta.title || 'See Our Spaces' }}
         </AppHeadingTitle>

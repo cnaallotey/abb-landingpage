@@ -1,6 +1,7 @@
 ---
 title: Our Services
 description: Comprehensive workspace solutions tailored to meet your business needs.
+brochure_download_link: "https://drive.google.com/uc?export=download&id=1eFKE1pOR3-Yb4aaUj7zfGCHp3gcuzQTH"
 services:
   - title: Coworking Spaces
     description: Open, collaborative environments that foster creativity and
