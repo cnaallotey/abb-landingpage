@@ -17,6 +17,11 @@ export default defineNuxtConfig({
     content: {
     preview: {
       api: 'https://api.nuxt.studio'
+    },
+
+    // Enable code highlighting
+    highlight: {
+      theme: 'github-light'
     }
   },
   // SEO Configuration
@@ -31,14 +36,6 @@ export default defineNuxtConfig({
           content: 'Discover Africa Business Bureau\'s state-of-the-art workspace solutions designed for innovation, collaboration, and productivity.'
         }
       ]
-    }
-  },
-
-  // Content configuration
-  content: {
-    // Enable code highlighting
-    highlight: {
-      theme: 'github-light'
     }
   },
 
