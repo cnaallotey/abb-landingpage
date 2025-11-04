@@ -27,6 +27,6 @@ amenities:
   - Meeting rooms
   - Hot desks
   - Private offices
-image: /images/office/airport.jpg
+image: /images/workspace-hero.jpg
 maps_link: https://maps.google.com
 ---
