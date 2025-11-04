@@ -117,7 +117,7 @@
       <div v-if="selectedLocation" class="mt-16">
         <div class="text-center mb-12">
           <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Available Packages - {{ selectedLocation === 'airport' ? 'Airport City' : 'Tema City' }} Office
+            Available Packages - {{ selectedLocation === 'airport' ? 'Airport' : 'Tema' }} Branch
           </h3>
           <p class="text-gray-600 dark:text-gray-400">
             Choose the perfect package that fits your business needs

@@ -37,6 +37,10 @@ export default defineContentConfig({
     branches: defineCollection({
       type: 'data',
       source: 'branches/*.md'
+    }),
+    clients: defineCollection({
+      type: 'data',
+      source: 'clients/*.md'
     })
   }
 })

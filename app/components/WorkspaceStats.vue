@@ -18,16 +18,16 @@
         <!-- Right Content -->
         <div class="lg:w-1/2 shrink-0 lg:absolute lg:top-1/2 lg:right-0 transform lg:-translate-y-1/2 z-10 text-slate-900 bg-white p-4 md:p-12 rounded-3xl ">
           <AppHeadingTitle>
-          {{ statsData?.title || 'Find the Perfect Space for Productivity' }}
+          {{ statsData?.meta.title || 'Find the Perfect Space for Productivity' }}
           </AppHeadingTitle>
           <p class="text-lg text-gray-500 mb-8">
-            {{ statsData?.description || 'Our workspace solutions are designed to enhance collaboration and boost productivity for teams of all sizes.' }}
+            {{ statsData?.meta.description || 'Our workspace solutions are designed to enhance collaboration and boost productivity for teams of all sizes.' }}
           </p>
           
           <!-- Stats -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div 
-              v-for="stat in (statsData?.stats || defaultStats)" 
+              v-for="stat in (statsData?.meta?.stats || defaultStats)" 
               :key="stat.label"
               class="text-center"
             >
@@ -37,7 +37,7 @@
           </div>
           
           <!-- CTA Button -->
-         <AppPrimaryButton>
+         <AppPrimaryButton class="w-full md:w-fit">
             {{ statsData?.cta?.text || 'Explore Our Spaces' }}
           </AppPrimaryButton>
         </div>
