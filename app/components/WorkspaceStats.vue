@@ -1,10 +1,10 @@
 <template>
-  <section class="bg-black dark:bg-gray-800 py-10 lg:py-40">
+  <section class="bg-black red:bg-gray-800 py-10 lg:py-40">
     <UContainer class="max-w-screen-2xl relative">
       <div class="flex flex-col lg:flex-row gap-5 md:gap-12 items-center">
         <!-- Left Image -->
         <div class="lg:w-[80%] shrink-0">
-          <div class="aspect-3/2  bg-gray-300 dark:bg-gray-600 rounded-3xl overflow-hidden">
+          <div class="aspect-3/2  bg-gray-300 red:bg-gray-600 rounded-3xl overflow-hidden">
             <NuxtImg
               src="/images/office2.jpg"
               alt="statsData.image.alt"

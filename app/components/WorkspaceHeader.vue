@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white  dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+  <header class="bg-white  red:bg-gray-900 border-b border-gray-200 red:border-gray-700 sticky top-0 z-50">
     <UContainer class="max-w-screen-2xl mx-auto py-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -15,7 +15,7 @@
             v-for="link in navigation"
             :key="link.to"
             :to="link.to"
-            class="text-gray-700 py-3 px-5 rounded-full border border-slate-300 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors"
+            class="text-gray-700 py-3 px-5 rounded-full border border-slate-300 red:text-gray-300 hover:text-red-600 red:hover:text-red-400 font-medium transition-colors"
           >
             {{ link.label }}
           </NuxtLink>
@@ -46,7 +46,7 @@
     <!-- Mobile Menu -->
     <div
       v-if="isMenuOpen"
-      class="xl:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+      class="xl:hidden bg-white red:bg-gray-900 border-t border-gray-200 red:border-gray-700"
     >
       <UContainer>
         <div class="py-4 space-y-2">
@@ -54,7 +54,7 @@
             v-for="link in navigation"
             :key="link.to"
             :to="link.to"
-            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors"
+            class="block px-4 py-2 text-gray-700 red:text-gray-300 hover:text-red-600 red:hover:text-red-400 font-medium transition-colors"
             @click="isMenuOpen = false"
           >
             {{ link.label }}

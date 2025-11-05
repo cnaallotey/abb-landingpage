@@ -19,7 +19,7 @@
           class="text-center"
         >
           <!-- Space Image Placeholder -->
-          <div class="aspect-square bg-gray-200 dark:bg-gray-700 rounded-lg mb-6">
+          <div class="aspect-square bg-gray-200 red:bg-gray-700 rounded-lg mb-6">
             <!-- Placeholder for space image -->
           </div>
           

@@ -1,12 +1,12 @@
 <template>
-  <section id="features" class="bg-white dark:bg-gray-900">
+  <section id="features" class="bg-white red:bg-gray-900">
     <UContainer class="max-w-screen-2xl mx-auto">
       <!-- Section Header -->
       <div class="text-center mb-8 md:mb-16">
         <AppHeadingTitle class="text-center">
           {{ servicesData?.meta.title || 'See Our Spaces' }}
         </AppHeadingTitle>
-        <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-500 red:text-gray-400 max-w-2xl mx-auto">
           {{ servicesData?.meta.description || 'Comprehensive workspace solutions tailored to meet your business needs.' }}
         </p>
       </div>
@@ -15,10 +15,10 @@
         <div 
           v-for="service in (servicesData?.meta.services || defaultServices)" 
           :key="service.title"
-          class=" bg-gray-50 group relative dark:bg-gray-800 aspect-2/3 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+          class=" bg-gray-50 group relative red:bg-gray-800 aspect-2/3 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
         >
           <!-- Service Image Placeholder -->
-          <div class="absolute inset-0 h-full bg-gray-200 dark:bg-gray-700 rounded-lg mb-6 overflow-hidden">
+          <div class="absolute inset-0 h-full bg-gray-200 red:bg-gray-700 rounded-lg mb-6 overflow-hidden">
             <NuxtImg
               v-if="service.image"
               :src="service.image"

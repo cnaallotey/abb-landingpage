@@ -1,11 +1,11 @@
 <template>
-  <section class="pb-16 bg-white dark:bg-gray-900 overflow-hidden">
+  <section class="pb-16 bg-white red:bg-gray-900 overflow-hidden">
     <UContainer>
       <div class="text-center mb-12">
        <AppHeadingTitle class="text-center">
           Experience Our <span>Workspace</span>
         </AppHeadingTitle>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-600 red:text-gray-400 max-w-2xl mx-auto">
           Take a virtual tour through our modern, innovative workspace environments designed for productivity and collaboration.
         </p>
       </div>
@@ -84,8 +84,8 @@
       </div>
 
       <!-- Gradient Overlays for fade effect -->
-      <div class="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white to-transparent dark:from-gray-900 pointer-events-none z-10" />
-      <div class="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white to-transparent dark:from-gray-900 pointer-events-none z-10" />
+      <div class="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white to-transparent red:from-gray-900 pointer-events-none z-10" />
+      <div class="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white to-transparent red:from-gray-900 pointer-events-none z-10" />
     </div>
   </section>
 </template>

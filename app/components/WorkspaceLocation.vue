@@ -6,7 +6,7 @@
           Our 
           <span class="text-red-500">Locations</span>        
         </AppHeadingTitle>
-        <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-500 red:text-gray-400 max-w-2xl mx-auto">
           Select any of our prime locations to see available spaces and services.
         </p>
       </div>
@@ -125,17 +125,17 @@
       <!-- Package Pricing Section -->
       <div v-if="selectedLocation" class="mt-16">
         <div class="text-center mb-12">
-          <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h3 class="text-3xl font-bold text-gray-900 red:text-white mb-4">
             Available Packages - {{ selectedLocation === 'airport' ? 'Airport City' : 'Tema City' }} Office
           </h3>
-          <p class="text-gray-600 dark:text-gray-400">
+          <p class="text-gray-600 red:text-gray-400">
             Choose the perfect package that fits your business needs
           </p>
         </div>
 
         <!-- Custom Tab Navigation -->
         <div class="w-full">
-          <div class="border-b border-gray-200 dark:border-gray-700 mb-8">
+          <div class="border-b border-gray-200 red:border-gray-700 mb-8">
             <nav class="flex space-x-8">
               <button 
                 v-for="tab in packageTabs" 
@@ -160,7 +160,7 @@
               <template #header>
                 <div class="flex justify-between items-start">
                   <div>
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white">UNIQUE PLAN</h4>
+                    <h4 class="text-xl font-bold text-gray-900 red:text-white">UNIQUE PLAN</h4>
                     <p class="text-sm text-gray-500 mt-1">Perfect for startups</p>
                   </div>
                   <UBadge color="blue" variant="soft">Popular</UBadge>
@@ -205,7 +205,7 @@
               <template #header>
                 <div class="flex justify-between items-start">
                   <div>
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white">OSCAR PLAN</h4>
+                    <h4 class="text-xl font-bold text-gray-900 red:text-white">OSCAR PLAN</h4>
                     <p class="text-sm text-gray-500 mt-1">For growing businesses</p>
                   </div>
                   <UBadge color="red">Recommended</UBadge>
@@ -249,7 +249,7 @@
               <template #header>
                 <div class="flex justify-between items-start">
                   <div>
-                    <h4 class="text-xl font-bold text-gray-900 dark:text-white">PROFESSIONAL PLAN</h4>
+                    <h4 class="text-xl font-bold text-gray-900 red:text-white">PROFESSIONAL PLAN</h4>
                     <p class="text-sm text-gray-500 mt-1">For established companies</p>
                   </div>
                   <UBadge color="amber" variant="soft">Premium</UBadge>
@@ -294,26 +294,26 @@
             <!-- Co-Working Space -->
             <UCard>
               <template #header>
-                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Co-Working Space</h4>
+                <h4 class="text-xl font-bold text-gray-900 red:text-white">Co-Working Space</h4>
               </template>
               
               <div class="space-y-4">
                 <div class="space-y-3">
-                  <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div class="flex justify-between items-center p-3 bg-gray-50 red:bg-gray-800 rounded-lg">
                     <span class="font-medium">Hourly</span>
                     <span class="text-lg font-bold text-red-500">GHS 70</span>
                   </div>
-                  <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div class="flex justify-between items-center p-3 bg-gray-50 red:bg-gray-800 rounded-lg">
                     <span class="font-medium">Daily</span>
                     <span class="text-lg font-bold text-red-500">GHS 300</span>
                   </div>
-                  <div class="flex justify-between items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200">
+                  <div class="flex justify-between items-center p-3 bg-red-50 red:bg-red-900/20 rounded-lg border border-red-200">
                     <span class="font-medium">Monthly</span>
                     <span class="text-lg font-bold text-red-500">GHS 3,000</span>
                   </div>
                 </div>
                 
-                <div class="text-sm text-gray-600 dark:text-gray-400">
+                <div class="text-sm text-gray-600 red:text-gray-400">
                   <p class="font-medium mb-2">Includes:</p>
                   <ul class="space-y-1">
                     <li>• High-speed Wi-Fi</li>
@@ -333,22 +333,22 @@
             <!-- Premium Private Office -->
             <UCard>
               <template #header>
-                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Premium Private Office</h4>
+                <h4 class="text-xl font-bold text-gray-900 red:text-white">Premium Private Office</h4>
               </template>
               
               <div class="space-y-4">
                 <div class="space-y-3">
-                  <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div class="flex justify-between items-center p-3 bg-gray-50 red:bg-gray-800 rounded-lg">
                     <span class="font-medium">Hourly</span>
                     <span class="text-lg font-bold text-red-500">GHS 200</span>
                   </div>
-                  <div class="flex justify-between items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200">
+                  <div class="flex justify-between items-center p-3 bg-red-50 red:bg-red-900/20 rounded-lg border border-red-200">
                     <span class="font-medium">Daily</span>
                     <span class="text-lg font-bold text-red-500">GHS 1,000</span>
                   </div>
                 </div>
                 
-                <div class="text-sm text-gray-600 dark:text-gray-400">
+                <div class="text-sm text-gray-600 red:text-gray-400">
                   <p class="font-medium mb-2">Includes:</p>
                   <ul class="space-y-1">
                     <li>• Private furnished office (1-2 guests)</li>
@@ -369,22 +369,22 @@
             <!-- Conference Space -->
             <UCard>
               <template #header>
-                <h4 class="text-xl font-bold text-gray-900 dark:text-white">Conference Space</h4>
+                <h4 class="text-xl font-bold text-gray-900 red:text-white">Conference Space</h4>
               </template>
               
               <div class="space-y-4">
                 <div class="space-y-3">
-                  <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                  <div class="flex justify-between items-center p-3 bg-gray-50 red:bg-gray-800 rounded-lg">
                     <span class="font-medium">Hourly</span>
                     <span class="text-lg font-bold text-red-500">GHS 300</span>
                   </div>
-                  <div class="flex justify-between items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200">
+                  <div class="flex justify-between items-center p-3 bg-red-50 red:bg-red-900/20 rounded-lg border border-red-200">
                     <span class="font-medium">Daily</span>
                     <span class="text-lg font-bold text-red-500">GHS 1,500</span>
                   </div>
                 </div>
                 
-                <div class="text-sm text-gray-600 dark:text-gray-400">
+                <div class="text-sm text-gray-600 red:text-gray-400">
                   <p class="font-medium mb-2">Includes:</p>
                   <ul class="space-y-1">
                     <li>• 6-8 seater room</li>
@@ -411,7 +411,7 @@
           Additional 
           <span class="text-red-500">Services</span>        
         </AppHeadingTitle>
-        <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-center">
+        <p class="text-lg text-gray-500 red:text-gray-400 max-w-2xl mx-auto text-center">
           Enhance your business with our range of professional services
         </p> 
       </div>
@@ -422,12 +422,12 @@
                 <template #header>
                   <div class="flex items-center gap-3">
                     <UIcon :name="service.icon" class="text-red-500 text-xl" />
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white">{{ service.name }}</h4>
+                    <h4 class="text-lg font-bold text-gray-900 red:text-white">{{ service.name }}</h4>
                   </div>
                 </template>
                 
                 <div class="space-y-4">
-                  <p class="text-sm text-gray-600 dark:text-gray-400">{{ service.description }}</p>
+                  <p class="text-sm text-gray-600 red:text-gray-400">{{ service.description }}</p>
                   
                   
                 </div>
@@ -446,12 +446,12 @@
         </UButton>
             </div>
             
-            <!-- <div class="mt-8 p-6 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200">
+            <!-- <div class="mt-8 p-6 bg-amber-50 red:bg-amber-900/20 rounded-lg border border-amber-200">
               <div class="flex items-start gap-3">
                 <UIcon name="i-heroicons-information-circle" class="text-amber-500 text-xl mt-0.5" />
                 <div>
-                  <h4 class="font-semibold text-amber-800 dark:text-amber-200 mb-2">Important Note</h4>
-                  <p class="text-sm text-amber-700 dark:text-amber-300">
+                  <h4 class="font-semibold text-amber-800 red:text-amber-200 mb-2">Important Note</h4>
+                  <p class="text-sm text-amber-700 red:text-amber-300">
                     All prices shown are exclusive of VAT. Contact our team for detailed quotes on additional services and custom packages.
                   </p>
                 </div>

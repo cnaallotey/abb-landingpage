@@ -1,12 +1,12 @@
 <template>
-  <section id="testimonials" class="bg-white dark:bg-gray-900">
+  <section id="testimonials" class="bg-white red:bg-gray-900">
     <UContainer class="max-w-screen-2xl">
       <!-- Section Header -->
       <div class="text-center mb-16">
        <AppHeadingTitle class="text-center">
           {{ testimonialsData?.meta.title || 'What Our Members Say' }}
         </AppHeadingTitle>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-600 red:text-gray-400 max-w-2xl mx-auto">
           {{ testimonialsData?.meta.description || 'Discover why professionals choose our workspace for their business success.' }}
         </p>
       </div>
@@ -16,19 +16,19 @@
         <div 
           v-for="testimonial in (testimonialsData?.meta.testimonials || defaultTestimonials)" 
           :key="testimonial.name"
-          class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg"
+          class="bg-gray-50 red:bg-gray-800 p-8 rounded-lg"
         >
           <!-- Quote -->
           <div class="mb-6">
             <UIcon name="i-heroicons-chat-bubble-left-ellipsis" class="w-8 h-8 text-red-500 mb-4" />
-            <p class="text-gray-700 dark:text-gray-300 italic">
+            <p class="text-gray-700 red:text-gray-300 italic">
               "{{ testimonial.quote }}"
             </p>
           </div>
           
           <!-- Author -->
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-full mr-4 overflow-hidden">
+            <div class="w-12 h-12 bg-gray-300 red:bg-gray-600 rounded-full mr-4 overflow-hidden">
               <NuxtImg
                 v-if="testimonial.avatar"
                 :src="testimonial.avatar"
@@ -40,10 +40,10 @@
               <!-- Avatar placeholder -->
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">
+              <h4 class="font-semibold text-gray-900 red:text-white">
                 {{ testimonial.name }}
               </h4>
-              <p class="text-sm text-gray-600 dark:text-gray-400">
+              <p class="text-sm text-gray-600 red:text-gray-400">
                 {{ testimonial.role }}{{ testimonial.company ? `, ${testimonial.company}` : '' }}
               </p>
             </div>

@@ -12,22 +12,22 @@
 <div class="max-w-3xl w-full px-4 mx-auto -mt-12">
 
     <!-- Card -->
-    <div class="mt-5 p-4 relative z-10 bg-white border text-left border-gray-200 rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
+    <div class="mt-5 p-4 relative z-10 bg-white border text-left border-gray-200 rounded-xl sm:mt-10 md:p-10 red:bg-neutral-900 red:border-neutral-700">
       <form>
         <div class="mb-4 sm:mb-8">
           <label for="hs-feedback-post-comment-name-1" class="block mb-2 text-sm font-medium text-gray-700">Full name</label>
-          <input type="text" id="hs-feedback-post-comment-name-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Full name">
+          <input type="text" id="hs-feedback-post-comment-name-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Full name">
         </div>
 
         <div class="mb-4 sm:mb-8">
           <label for="hs-feedback-post-comment-email-1" class="block mb-2 text-sm font-medium text-gray-700">Email address</label>
-          <input type="email" id="hs-feedback-post-comment-email-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Email address">
+          <input type="email" id="hs-feedback-post-comment-email-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Email address">
         </div>
 
         <div>
           <label for="hs-feedback-post-comment-textarea-1" class="block mb-2 text-sm  font-medium text-gray-700">Comment</label>
           <div class="mt-1">
-            <textarea id="hs-feedback-post-comment-textarea-1" name="hs-feedback-post-comment-textarea-1" rows="3" class="border py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Leave your comment here..."></textarea>
+            <textarea id="hs-feedback-post-comment-textarea-1" name="hs-feedback-post-comment-textarea-1" rows="3" class="border py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Leave your comment here..."></textarea>
           </div>
         </div>
 

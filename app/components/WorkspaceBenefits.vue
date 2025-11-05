@@ -1,5 +1,5 @@
 <template>
-  <section id="benefits" class="py-20 bg-red-600 dark:bg-gray-800">
+  <section id="benefits" class="py-20 bg-red-600 redbg-gray-800">
     <UContainer class="max-w-screen-2xl mx-auto">
       <!-- Section Header -->
       <div class="text-center mb-16">
@@ -16,12 +16,12 @@
                 <template #header>
                   <div class="flex items-center gap-3">
                     <UIcon :name="benefit.icon" size="2xl" class="text-red-500 text-xl size-10" />
-                    <h4 class="text-lg font-bold text-gray-900 dark:text-white">{{ benefit.title }}</h4>
+                    <h4 class="text-lg font-bold text-gray-900 redtext-white">{{ benefit.title }}</h4>
                   </div>
                 </template>
                 
                 <div class="space-y-4">
-                  <p class="text-sm text-gray-600 dark:text-gray-400">{{ benefit.description }}</p>
+                  <p class="text-sm text-gray-600 redtext-gray-400">{{ benefit.description }}</p>
                   
                   
                 </div>
