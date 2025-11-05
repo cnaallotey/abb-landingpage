@@ -13,6 +13,13 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/sitemap'
   ],
+
+  colorMode: {
+    preference: 'light' // Enforce light mode
+  },
+  ui: {
+    colorMode: false
+  },
   
     content: {
     preview: {
