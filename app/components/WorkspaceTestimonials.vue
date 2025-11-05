@@ -30,8 +30,7 @@
           <div class="flex items-center">
             <div class="w-12 h-12 bg-gray-300 red:bg-gray-600 rounded-full mr-4 overflow-hidden">
               <NuxtImg
-                v-if="testimonial.avatar"
-                :src="testimonial.avatar"
+                :src="testimonial.avatar ? testimonial.avatar : `https://avatar.iran.liara.run/username?username=${testimonial.name}`"
                 :alt="testimonial.name"
                 class="w-full h-full object-cover"
                 loading="lazy"
