@@ -6,13 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   vite: {    plugins: [      tailwindcss(),    ],  },
   css: ['./app/assets/css/main.css'],
-  modules: [
-    '@nuxt/content',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxt/eslint',
-    '@nuxtjs/sitemap'
-  ],
+  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/sitemap', 'nuxt-studio'],
 
   colorMode: {
     preference: 'light' // Enforce light mode
@@ -45,6 +39,19 @@ export default defineNuxtConfig({
 
         }
       ]
+    }
+  },
+
+    studio: {
+    // Studio admin route (default: '/_studio')
+    route: '/_studio',
+    
+    // GitHub repository configuration (owner and repo are required)
+    repository: {
+      provider: 'github', // only GitHub is currently supported
+      owner: 'cnaallotey', // your GitHub username or organization
+      repo: 'abb-landingpage', // your repository name
+      branch: 'main', // the branch to commit to (default: main)
     }
   },
 

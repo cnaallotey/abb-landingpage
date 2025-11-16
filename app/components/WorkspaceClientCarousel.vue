@@ -1,86 +1,61 @@
 <template>
-  <div class="relative overflow-hidden w-full py-8">
-    <!-- Marquee Container -->
-    <div class="flex marquee-container">
-      <!-- First set of logos -->
-      <div class="flex items-center gap-12 marquee-content">
+  <div class="relative overflow-visible h-16 w-full">
+    <!-- Single row with 5 visible items -->
+    <div class="flex items-center justify-center space-x-4">
+      <UMarquee 
+        name="client-spin" 
+        tag="div" 
+        class="flex items-center space-x-5"
+      >
         <div
-          v-for="(client, index) in allClients"
-          :key="`${client.meta.name}-${index}`"
-          class="shrink-0 w-32 h-16 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+          v-for="client in allClients"
+          :key="`${client.meta.name}-${client.id}`"
+          class="flex-shrink-0 h-16 w-20 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
         >
-          <NuxtImg
+          <img
             :src="client.meta.logo"
             :alt="client.meta.name"
             :title="client.meta.name"
-            class="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+            class="max-w-full max-h-full object-contain filter  transition-all duration-300"
             loading="lazy"
           />
         </div>
-      </div>
-      
-      <!-- Duplicate set for seamless loop -->
-      <div class="flex items-center gap-12 marquee-content" aria-hidden="true">
-        <div
-          v-for="(client, index) in allClients"
-          :key="`${client.meta.name}-duplicate-${index}`"
-          class="shrink-0 w-32 h-16 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
-        >
-          <NuxtImg
-            :src="client.meta.logo"
-            :alt="client.meta.name"
-            :title="client.meta.name"
-            class="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-            loading="lazy"
-          />
-        </div>
-      </div>
+      </UMarquee>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
 // Fetch all clients from Nuxt Content
 const { data: allClients } = await useAsyncData('clients', () => queryCollection('clients').all())
+
 </script>
 
 <style scoped>
-.marquee-container {
-  animation: marquee 30s linear infinite;
+.client-spin-enter-active,
+.client-spin-leave-active {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.marquee-container:hover {
-  animation-play-state: paused;
+.client-spin-enter-from {
+  opacity: 0;
+  transform: translateY(100%) rotateX(90deg);
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.client-spin-leave-to {
+  opacity: 0;
+  transform: translateY(-100%) rotateX(-90deg);
 }
 
-/* Fade effect at edges */
-.relative::before,
-.relative::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  z-index: 10;
-  pointer-events: none;
+.client-spin-move {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.relative::before {
-  left: 0;
-  background: linear-gradient(to right, transparent, transparent);
-}
-
-.relative::after {
-  right: 0;
-  background: linear-gradient(to left, transparent, transparent);
+/* Enhance 3D effect */
+.client-spin-enter-active,
+.client-spin-leave-active {
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 </style>
