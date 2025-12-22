@@ -1,32 +1,34 @@
 <template>
   <div class="flex flex-col gap-20 md:gap-32 [&>div]:scroll-mt-28">
     <!-- Hero Section -->
-    <div>
+    <div class="flex flex-col gap-0" v-animate>
       <WorkspaceHero />
-    
+      <!-- Story Section -->
+     <WorkspaceStory id="about" v-animate />
+
     <!-- Stats Section -->
-    <WorkspaceStats  id="about"/>
+    <WorkspaceStats v-animate />
     </div>
     
     <!-- Services Section -->
-    <WorkspaceFeatures id="services"/>
+    <WorkspaceFeatures id="services" v-animate/>
 
-    <WorkspaceLocation id="locations"/>
+    <WorkspaceLocations id="locations" v-animate/>
     
     <!-- Benefits Section -->
-    <WorkspaceBenefits id="benefits"/>
+    <WorkspaceBenefits id="benefits" v-animate/>
 
 <!-- Clients Section -->
-<WorkspaceClients id="clients"/>
+<WorkspaceClients id="clients" v-animate/>
     
     <!-- Testimonials -->
-    <WorkspaceTestimonials id="testimonials"/>
+    <!-- <WorkspaceTestimonials id="testimonials" v-animate/> -->
 
     <!-- Image Marquee Section -->
-    <WorkspaceImageMarquee />
+    <WorkspaceImageMarquee v-animate/>
     
     <!-- Call to Action -->
-    <WorkspaceCTA id="contact"/>
+    <WorkspaceCTA id="contact" v-animate/>
   </div>
 </template>
 

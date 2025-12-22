@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-visible h-16 w-full">
+  <div class="relative overflow-visible h-16 w-full max-w-screen-2xl mx-auto">
     <!-- Single row with 5 visible items -->
     <div class="flex items-center justify-center space-x-4">
       <UMarquee 
@@ -10,7 +10,7 @@
         <div
           v-for="client in allClients"
           :key="`${client.meta.name}-${client.id}`"
-          class="flex-shrink-0 h-16 w-20 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+          class="flex-shrink-0 h-20 w-40 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
         >
           <img
             :src="client.meta.logo"

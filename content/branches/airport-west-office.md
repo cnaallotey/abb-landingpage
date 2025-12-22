@@ -1,20 +1,19 @@
 ---
-title: ABB Airport City Office
-location: airport
+title: ABB Airport West Office
+location: airport-west
 address:
-  street: 2 Allotey Road, East Legon
-  district: East Legon
+  street: Osu Badu CR 9
+  district: Airport West
   city: Accra
   region: Greater Accra
   country: Ghana
-  postal_code: GA-123
+  postal_code: GA-155-4078
 contact:
-  phone: +233 (0) 302 123 456
-  email: airport@abb.com
-  whatsapp: +233 55 765 4321
+  phone: +233 (0) 303 398 3218 
+  email: info@africabusinessbureau.com
+  whatsapp: +233 257 003 554 
 operating_hours:
-  weekdays: "Monday - Friday: 6:00 AM - 10:00 PM"
-  weekends: "Saturday - Sunday: 8:00 AM - 8:00 PM"
+  weekdays: "Monday - Friday: 8:00 AM - 6:00 PM"
   access: 24/7 access available for members
 description: Strategically located near Kotoka International Airport, perfect
   for business travelers and international meetings.

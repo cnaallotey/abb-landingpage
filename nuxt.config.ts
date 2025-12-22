@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  vite: {    plugins: [      tailwindcss(),    ],  },
+  vite: { plugins: [tailwindcss(),], },
   css: ['./app/assets/css/main.css'],
   modules: ['@nuxt/content', '@nuxt/image', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/sitemap', 'nuxt-studio'],
 
@@ -14,8 +14,8 @@ export default defineNuxtConfig({
   ui: {
     colorMode: false
   },
-  
-    content: {
+
+  content: {
     preview: {
       api: 'https://api.nuxt.studio'
     },
@@ -42,10 +42,10 @@ export default defineNuxtConfig({
     }
   },
 
-    studio: {
+  studio: {
     // Studio admin route (default: '/_studio')
     route: '/_studio',
-    
+
     // GitHub repository configuration (owner and repo are required)
     repository: {
       provider: 'github', // only GitHub is currently supported
@@ -84,7 +84,9 @@ export default defineNuxtConfig({
     public: {
       siteUrl: 'https://workspace.abb.com',
       siteName: 'ABB Workspace',
-      siteDescription: 'Premium workspace solutions by ABB'
+      siteDescription: 'Premium workspace solutions by ABB',
+      strapiBaseURL: process.env.STRAPI_BASE_URL || 'http://localhost:1337',
+      strapiToken: process.env.STRAPI_TOKEN || '',
     }
   }
 })

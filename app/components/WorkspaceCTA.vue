@@ -13,21 +13,21 @@
 
     <!-- Card -->
     <div class="mt-5 p-4 relative z-10 bg-white border text-left border-gray-200 rounded-xl sm:mt-10 md:p-10 red:bg-neutral-900 red:border-neutral-700">
-      <form>
+      <form @submit.prevent="submitForm">
         <div class="mb-4 sm:mb-8">
           <label for="hs-feedback-post-comment-name-1" class="block mb-2 text-sm font-medium text-gray-700">Full name</label>
-          <input type="text" id="hs-feedback-post-comment-name-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Full name">
+          <input v-model="form.fullName" required type="text" id="hs-feedback-post-comment-name-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm text-gray-700 focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Full name">
         </div>
 
         <div class="mb-4 sm:mb-8">
           <label for="hs-feedback-post-comment-email-1" class="block mb-2 text-sm font-medium text-gray-700">Email address</label>
-          <input type="email" id="hs-feedback-post-comment-email-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Email address">
+          <input v-model="form.email" required type="email" id="hs-feedback-post-comment-email-1" class="py-2.5 border sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm text-gray-700 focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Email address">
         </div>
 
         <div>
           <label for="hs-feedback-post-comment-textarea-1" class="block mb-2 text-sm  font-medium text-gray-700">Comment</label>
           <div class="mt-1">
-            <textarea id="hs-feedback-post-comment-textarea-1" name="hs-feedback-post-comment-textarea-1" rows="3" class="border py-2.5 sm:py-3 px-4 block w-full border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Leave your comment here..."></textarea>
+            <textarea v-model="form.comment" required id="hs-feedback-post-comment-textarea-1" name="hs-feedback-post-comment-textarea-1" rows="3" class="border py-2.5 sm:py-3 px-4 block w-full text-gray-700 border-gray-200 rounded-lg sm:text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none red:bg-neutral-900 red:border-neutral-700 red:text-neutral-400 red:placeholder-neutral-500 red:focus:ring-neutral-600" placeholder="Leave your comment here..."></textarea>
           </div>
         </div>
 
@@ -36,12 +36,15 @@
           size="xl" 
           color="white" 
           variant="solid"
+          :loading="loading"
           :icon="ctaData?.meta?.buttons?.form?.icon || 'i-heroicons-arrow-right'"
           type="submit"
           class="text-white bg-red-600 px-10 inline-flex justify-center items-center py-4 text-base rounded-full"
         >
           {{ ctaData?.meta?.buttons?.form?.submit || 'Submit' }}
         </UButton>
+        <p v-if="successMessage" class="text-green-600 mt-2 text-center text-sm font-medium">{{ successMessage }}</p>
+        <p v-if="errorMessage" class="text-red-500 mt-2 text-center text-sm font-medium">{{ errorMessage }}</p>
         </div>
       </form>
     </div>
@@ -56,13 +59,13 @@
           size="xl" 
           :class="[
             'rounded-full py-4 px-10 transition-all duration-300',
-            selectedLocation === 'airport' 
+            selectedLocation === 'airport-west' 
               ? 'bg-red-600 text-white' 
               : 'bg-white text-red-600'
           ]"
           color="white" 
           variant="outline"
-          @click="selectLocation('airport')"
+          @click="selectLocation('airport-west')"
         >
           Airport Branch
         </UButton>
@@ -99,9 +102,7 @@
             <UIcon name="i-heroicons-clock" class="w-8 h-8 mx-auto text-white/80" />
             <h4 class="font-semibold text-2xl">Operating Hours</h4>
             <p class="text-white/80 text-sm">
-              {{ selectedLocationData?.meta?.operating_hours?.weekdays || 'Monday - Friday: 6:00 AM - 10:00 PM' }}<br>
-              {{ selectedLocationData?.meta?.operating_hours?.weekends || 'Saturday - Sunday: 8:00 AM - 8:00 PM' }}<br>
-              {{ selectedLocationData?.meta?.operating_hours?.access || '24/7 access available for members' }}
+              {{ selectedLocationData?.meta?.operating_hours?.weekdays }}
             </p>
           </div>
           <div class="space-y-2">
@@ -147,7 +148,7 @@ const { data: ctaData } = await useAsyncData('cta', () => queryCollection('cta')
 const { data: branchesData } = await useAsyncData('branches', () => queryCollection('branches').all())
 
 // Location selection state
-const selectedLocation = ref('airport')
+const selectedLocation = ref('airport-west')
 
 // Computed property for selected location data
 const selectedLocationData = computed(() => {
@@ -183,4 +184,55 @@ const quickBenefits = [
     icon: 'i-heroicons-cpu-chip'
   }
 ]
+
+// Form logic
+const form = ref({
+  fullName: '',
+  email: '',
+  comment: ''
+})
+const config = useRuntimeConfig()
+const loading = ref(false)
+const successMessage = ref('')
+const errorMessage = ref('')
+
+async function submitForm() {
+  loading.value = true
+  successMessage.value = ''
+  errorMessage.value = ''
+  
+  try {
+     const { data, error } = await useFetch('/api/contact-submissions', {
+      method: 'POST',
+      baseURL: config.public.strapiBaseURL,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + config.public.strapiToken,
+      },
+      body: {
+        data: {
+          name: form.value.fullName,
+          email: form.value.email,
+          message: form.value.comment,
+          location: selectedLocation.value,
+          subject: 'Website Inquiry'
+        }
+      }
+    })
+
+    if (error.value) {
+      throw new Error(error.value.message || 'Failed to submit form')
+    }
+    
+    successMessage.value = 'Thank you! We will be in touch shortly.'
+    form.value = { fullName: '', email: '', comment: '' }
+    
+  } catch (e: any) {
+    console.error('Form submission error:', e)
+    errorMessage.value = 'Something went wrong. Please try again later.'
+  } finally {
+    loading.value = false
+  }
+}
 </script>
