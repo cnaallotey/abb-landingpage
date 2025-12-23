@@ -31,7 +31,7 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'Africa Business Bureau - Premium Workspace Solutions',
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/images/favicon.png' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: 'https://workspace.africabusinessbureau.com/abb-icon.png' }],
       meta: [
         {
           name: 'description',
