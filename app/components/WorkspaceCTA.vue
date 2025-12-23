@@ -112,6 +112,9 @@
               {{ selectedLocationData?.meta?.contact?.email || 'workspace@abb.com' }}<br>
               {{ selectedLocationData?.meta?.contact?.phone || '+41 43 317 71 11' }}<br>
               {{ selectedLocationData?.meta?.contact?.whatsapp ? 'WhatsApp available' : 'Chat support available' }}
+              <a :href="`https://wa.me/${selectedLocationData?.meta?.contact?.whatsapp}`" target="_blank" rel="noopener noreferrer">
+                <UIcon name="i-heroicons-whatsapp" class="w-6 h-6 mx-auto text-white/80" />
+              </a>
             </p>
           </div>
         </div>

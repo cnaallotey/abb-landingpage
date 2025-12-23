@@ -16,8 +16,8 @@ const locations = [
     email: 'info@africabusinessbureau.com',
     phone: '+233 (0) 303 398 3218 ',
     whatsapp: '+233 257 003 554',
-    hours: 'Monday – Friday: 8:00 AM - 6:00 PM\n',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.970267230493!2d-0.1738746852339893!3d5.571583995960456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9a5769298d7b%3A0x4b7260533833210!2sEast%20Legon%2C%20Accra!5e0!3m2!1sen!2sgh!4v1625678901234!5m2!1sen!2sgh'
+    hours: 'Monday – Friday: 8:00 AM - 5:00 PM\n',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.6731745702173!2d-0.19096565254227957!3d5.615187018587501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b0817d5191f%3A0x4469e7f71326005a!2s9%20Osu%20Badu%20St%2C%20Accra!5e0!3m2!1sen!2sgh!4v1766478842693!5m2!1sen!2sgh'
   },
   {
     name: 'Tema Office',
@@ -28,8 +28,8 @@ const locations = [
     email: 'info@africabusinessbureau.com',
     phone: '+233 (0) 303 398 3217',
     whatsapp: '+233 257 003 554',
-    hours: 'Monday – Friday: 8:00 AM - 6:00 PM\n',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.456789012345!2d0.012345678901!3d5.678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1020789012345678%3A0x9012345678901234!2sTema%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1625678901234!5m2!1sen!2sgh'
+    hours: 'Monday – Friday: 8:00 AM - 5:00 PM\n',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.3804542852195!2d-0.025252252540753643!3d5.6579856180425985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8124966aefdb%3A0x1ad80952b28ad3f5!2sAfrica%20Business%20Bureau!5e0!3m2!1sen!2sgh!4v1766478977871!5m2!1sen!2sgh'
   }
 ];
 

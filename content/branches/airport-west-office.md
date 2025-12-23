@@ -13,7 +13,7 @@ contact:
   email: info@africabusinessbureau.com
   whatsapp: +233 257 003 554 
 operating_hours:
-  weekdays: "Monday - Friday: 8:00 AM - 6:00 PM"
+  weekdays: "Monday - Friday: 8:00 AM - 5:00 PM"
   access: 24/7 access available for members
 description: Strategically located near Kotoka International Airport, perfect
   for business travelers and international meetings.

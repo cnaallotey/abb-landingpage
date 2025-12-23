@@ -13,7 +13,7 @@ contact:
   email: info@africabusinessbureau.com
   whatsapp: +233 0257003554 
 operating_hours:
-  weekdays: "Monday - Friday: 8:00 AM - 6:00 PM"
+  weekdays: "Monday - Friday: 8:00 AM - 5:00 PM"
   access: 24/7 access available for members
 description: Located in the heart of Tema's industrial area, our workspace
   provides easy access to the port and major commercial districts.
