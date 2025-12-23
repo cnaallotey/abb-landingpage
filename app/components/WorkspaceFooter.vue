@@ -8,8 +8,9 @@
             <div class="flex items-center space-x-3 mb-4">
               <div class=" rounded flex items-center justify-center">
                 <NuxtImg
-                  src="/images/ABB-logo.png"
+                  src="/images/footer-icon.png"
                   alt="ABB Workspace"
+                  loading="lazy"
                   class="w-full h-28 object-contain"
                 />
               </div>
