@@ -17,9 +17,10 @@
   "Private offices"
 ],
     stats: [
-      { label: 'Capacity', value: '200+ Seats' },
-      { label: 'Meeting Rooms', value: '5 Rooms' },
-      { label: 'Availability', value: 'Immediate' }
+      { label: 'Conference Room', value: '10' },
+      { label: 'Co Working Space', value: '20' },
+      { label: 'Training Room', value: '30' },
+      { label: 'Private Office', value: '3' }
     ]
   },
   {
@@ -39,9 +40,9 @@
       "Private offices"
     ],
     stats: [
-      { label: 'Capacity', value: '150+ Seats' },
-      { label: 'Meeting Rooms', value: '3 Rooms' },
-      { label: 'Availability', value: 'Limited' }
+      { label: 'Conference Room', value: '6' },
+      { label: 'Co Working Space', value: '4' },
+      { label: 'Private Office', value: '2' }
     ]
   }
 ]

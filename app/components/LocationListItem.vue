@@ -47,7 +47,7 @@ defineProps<{
         </div>
 
         <!-- Footer Stats -->
-        <div class="md:grid grid-cols-3 gap-4 border-t border-gray-200 pt-8 mt-auto">
+        <div class="md:grid grid-cols-4 gap-4 border-t border-gray-200 pt-8 mt-auto">
           <div v-for="stat in stats" :key="stat.label">
             <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">{{ stat.label }}</p>
             <p class="text-lg font-semibold text-gray-900">{{ stat.value }}</p>
