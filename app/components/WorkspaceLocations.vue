@@ -1,51 +1,5 @@
 <script setup>
-    const locations = [
-  {
-    name: 'ABB Airport West Office',
-    description: 'A premium corporate workspace located in the heart of Accra’s business district. Featuring state-of-the-art facilities, panoramic city views, and direct access to major transport links. Ideal for multinational corporations and established enterprises.',
-    address: '2 Allotey road, East Legon, Accra, Ghana',
-    image: '/images/workspace-hero.jpg',
-    slug: 'airport-west-office',
-    features: [
-  "Airport shuttle service",
-  "Conference facilities",
-  "Premium internet",
-  "Business lounge",
-  "Concierge services",
-  "Meeting rooms",
-  "Hot desks",
-  "Private offices"
-],
-    stats: [
-      { label: 'Conference Room', value: '10' },
-      { label: 'Co Working Space', value: '20' },
-      { label: 'Training Room', value: '30' },
-      { label: 'Private Office', value: '3' }
-    ]
-  },
-  {
-    name: 'ABB Tema Office',
-    description: 'A vibrant and flexible coworking environment designed for startups and freelancers. Offers open-plan desks, creative studios, and a collaborative community atmosphere. Located in the industrial hub with easy access to the port.',
-    address: 'Tema Community 16, Tema, Ghana',
-    image: '/images/office/tema.jpg',
-    slug: 'tema-office',
-    features: [
-      "High-speed fiber internet",
-      "24/7 security",
-      "Port proximity",
-      "Industrial partnerships",
-      "Logistics support",
-      "Meeting rooms",
-      "Co-working spaces",
-      "Private offices"
-    ],
-    stats: [
-      { label: 'Conference Room', value: '6' },
-      { label: 'Co Working Space', value: '4' },
-      { label: 'Private Office', value: '2' }
-    ]
-  }
-]
+const { data: locations } = await useAsyncData('locations', () => queryCollection('locations').all())
 </script>
 
 <template>

@@ -1,5 +1,18 @@
 ---
 title: "Ready to Experience the Future of Work? Send Us a Message"
+quickBenefits:
+  - title: "Instant Booking"
+    description: "Reserve spaces in real-time"
+    icon: "i-heroicons-bolt"
+  - title: "Flexible Plans"
+    description: "Hourly, daily, or monthly options"
+    icon: "i-heroicons-adjustments-horizontal"
+  - title: "Premium Support"
+    description: "24/7 technical assistance"
+    icon: "i-heroicons-shield-check"
+  - title: "Smart Integration"
+    description: "IoT-enabled workspace controls"
+    icon: "i-heroicons-cpu-chip"
 description: "Join leading teams who have transformed their productivity and innovation capabilities with ABB's workspace solutions. Tell us what you need and we will handle the rest"
 buttons:
   primary:

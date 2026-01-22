@@ -4,15 +4,15 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <AppHeadingTitle class="text-center text-white">
-          {{ benefitsData?.meta.title || 'Membership Benefits' }}
+          {{ benefitsData?.title || 'Membership Benefits' }}
         </AppHeadingTitle>
         <p class="text-lg text-white max-w-2xl mx-auto">
-          {{ benefitsData?.meta.description || 'Unlock exclusive perks and amenities designed to enhance your work experience.' }}
+          {{ benefitsData?.description || 'Unlock exclusive perks and amenities designed to enhance your work experience.' }}
         </p>
         </div>
       <!-- Benefits Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <UCard v-for="benefit in (benefitsData?.meta.benefits || defaultBenefits)" :key="benefit.title" class="rounded-3xl">
+      <UCard v-for="benefit in (benefitsData?.benefits || defaultBenefits)" :key="benefit.title" class="rounded-3xl">
                 <template #header>
                   <div class="flex items-center gap-3">
                     <UIcon :name="benefit.icon" size="2xl" class="text-red-500 text-xl size-10" />

@@ -1,7 +1,7 @@
 <template>
   <UPageCTA
-    :title="ctaData?.meta?.title || 'Ready to Experience the Future of Work? Send Us a Message'"
-    :description="ctaData?.meta?.description || 'Join leading teams who have transformed their productivity and innovation capabilities with ABB\'s workspace solutions.'"
+    :title="ctaData?.title || 'Ready to Experience the Future of Work? Send Us a Message'"
+    :description="ctaData?.description || 'Join leading teams who have transformed their productivity and innovation capabilities with ABB\'s workspace solutions.'"
     align="center"
     :ui="{title: 'text-white', description: '!text-white/90'}"
     class="bg-linear-to-r !rounded-none from-red-600 to-red-700 !text-white py-16"
@@ -37,11 +37,11 @@
           color="white" 
           variant="solid"
           :loading="loading"
-          :icon="ctaData?.meta?.buttons?.form?.icon || 'i-heroicons-arrow-right'"
+          :icon="ctaData?.buttons?.form?.icon || 'i-heroicons-arrow-right'"
           type="submit"
           class="text-white bg-red-600 px-10 inline-flex justify-center items-center py-4 text-base rounded-full"
         >
-          {{ ctaData?.meta?.buttons?.form?.submit || 'Submit' }}
+          {{ ctaData?.buttons?.form?.submit || 'Submit' }}
         </UButton>
         <p v-if="successMessage" class="text-green-600 mt-2 text-center text-sm font-medium">{{ successMessage }}</p>
         <p v-if="errorMessage" class="text-red-500 mt-2 text-center text-sm font-medium">{{ errorMessage }}</p>
@@ -56,32 +56,20 @@
       <!-- Location Selection -->
       <div class="w-fit md:mx-auto bg-white/50 flex items-center gap-6 rounded-full p-4 mx-4 mb-8">
         <UButton 
+          v-for="location in locationsData"
+          :key="location.slug"
           size="xl" 
           :class="[
             'rounded-full py-4 px-10 transition-all duration-300',
-            selectedLocation === 'airport-west' 
+            selectedLocation === location.slug 
               ? 'bg-red-600 text-white' 
               : 'bg-white text-red-600'
           ]"
           color="white" 
           variant="outline"
-          @click="selectLocation('airport-west')"
+          @click="selectLocation(location.slug)"
         >
-          Airport Branch
-        </UButton>
-        <UButton 
-          size="xl" 
-          :class="[
-            'rounded-full py-4 px-10 transition-all duration-300',
-            selectedLocation === 'tema' 
-              ? 'bg-red-600 text-white' 
-              : 'bg-white text-red-600'
-          ]"
-          color="white" 
-          variant="outline"
-          @click="selectLocation('tema')"
-        >
-          Tema Branch
+          {{ location.name }}
         </UButton>
       </div>
 
@@ -92,9 +80,8 @@
             <UIcon name="i-heroicons-map-pin" class="w-8 h-8 mx-auto text-white/80" />
             <h4 class="font-semibold text-2xl">Visit Us</h4>
             <p class="text-white/80 text-sm">
-              {{ selectedLocationData?.meta?.title || 'ABB Technology Center' }}<br>
-              {{ selectedLocationData?.meta?.address?.street || 'Affolternstrasse 44' }}<br>
-              {{ selectedLocationData?.meta?.address?.city || 'Zurich' }}, {{ selectedLocationData?.meta?.address?.country || 'Switzerland' }}
+              {{ selectedLocationData?.name || 'ABB Technology Center' }}<br>
+              {{ selectedLocationData?.address || 'Affolternstrasse 44' }}<br>
             </p>
           </div>
           
@@ -102,17 +89,17 @@
             <UIcon name="i-heroicons-clock" class="w-8 h-8 mx-auto text-white/80" />
             <h4 class="font-semibold text-2xl">Operating Hours</h4>
             <p class="text-white/80 text-sm">
-              {{ selectedLocationData?.meta?.operating_hours?.weekdays }}
+              {{ selectedLocationData?.operating_hours?.weekdays || 'Mon-Fri: 8am - 5pm' }}
             </p>
           </div>
           <div class="space-y-2">
             <UIcon name="i-heroicons-envelope" class="w-8 h-8 mx-auto text-white/80" />
             <h4 class="font-semibold text-2xl">Get in Touch</h4>
             <p class="text-white/80 text-sm">
-              {{ selectedLocationData?.meta?.contact?.email || 'workspace@abb.com' }}<br>
-              {{ selectedLocationData?.meta?.contact?.phone || '+41 43 317 71 11' }}<br>
-              {{ selectedLocationData?.meta?.contact?.whatsapp ? 'WhatsApp available' : 'Chat support available' }}
-              <a :href="`https://wa.me/${selectedLocationData?.meta?.contact?.whatsapp}`" target="_blank" rel="noopener noreferrer">
+              {{ selectedLocationData?.contact?.email || 'workspace@abb.com' }}<br>
+              {{ selectedLocationData?.contact?.phone || '+233 24 431 7111' }}<br>
+              {{ selectedLocationData?.contact?.whatsapp ? 'WhatsApp available' : 'Chat support available' }}
+              <a v-if="selectedLocationData?.contact?.whatsapp" :href="`https://wa.me/${selectedLocationData?.contact?.whatsapp}`" target="_blank" rel="noopener noreferrer">
                 <UIcon name="i-heroicons-whatsapp" class="w-6 h-6 mx-auto text-white/80" />
               </a>
             </p>
@@ -122,15 +109,15 @@
       
       <!-- Location Image -->
       <NuxtImg 
-        :src="selectedLocationData?.meta?.image || '/images/office/tema.jpg'" 
-        :alt="`${selectedLocationData?.meta?.title || 'Workspace'} Background`" 
+        :src="selectedLocationData?.image || '/images/office/tema.jpg'" 
+        :alt="`${selectedLocationData?.name || 'Workspace'} Background`" 
         class="bg-white/10 max-w-screen-2xl object-center w-full px-4 object-cover mx-auto backdrop-blur-sm rounded-2xl aspect-3/1 mt-10"
         lazyload
       />
       <!-- Quick Benefits -->
       <div class="mt-8 grid max-w-screen-2xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div 
-          v-for="benefit in quickBenefits"
+          v-for="benefit in (ctaData?.quickBenefits || [])"
           :key="benefit.title"
           class="text-center space-y-2"
         >
@@ -147,16 +134,16 @@
 // Fetch CTA content from Nuxt Content using the new API
 const { data: ctaData } = await useAsyncData('cta', () => queryCollection('cta').first())
 
-// Fetch all branch data
-const { data: branchesData } = await useAsyncData('branches', () => queryCollection('branches').all())
+// Fetch all location data
+const { data: locationsData } = await useAsyncData('locations', () => queryCollection('locations').all())
 
 // Location selection state
-const selectedLocation = ref('airport-west')
+const selectedLocation = ref(locationsData.value?.[0]?.slug || 'airport-west-office')
 
 // Computed property for selected location data
 const selectedLocationData = computed(() => {
-  if (!branchesData.value) return null
-  return branchesData.value.find((branch: any) => branch.meta.location === selectedLocation.value)
+  if (!locationsData.value) return null
+  return locationsData.value.find((branch: any) => branch.slug === selectedLocation.value)
 })
 
 // Function to select location
