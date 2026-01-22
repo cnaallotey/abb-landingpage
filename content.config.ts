@@ -85,7 +85,7 @@ export default defineContentConfig({
     }),
     locations: defineCollection({
       type: 'data',
-      source: 'locations.json',
+      source: 'locations/*.json',
       schema: z.object({
         name: z.string(),
         description: z.string(),

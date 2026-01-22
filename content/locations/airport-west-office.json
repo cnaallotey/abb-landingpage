@@ -1,0 +1,43 @@
+{
+    "name": "ABB Airport West Office",
+    "description": "A premium corporate workspace located in the heart of Accra’s business district. Featuring state-of-the-art facilities, panoramic city views, and direct access to major transport links. Ideal for multinational corporations and established enterprises.",
+    "address": "2 Allotey road, East Legon, Accra, Ghana",
+    "image": "/images/workspace-hero.jpg",
+    "slug": "airport-west-office",
+    "contact": {
+        "email": "airport@abb.com",
+        "phone": "+233 24 431 7111",
+        "whatsapp": "233244317111"
+    },
+    "operating_hours": {
+        "weekdays": "Mon-Fri: 8am - 8pm"
+    },
+    "features": [
+        "Airport shuttle service",
+        "Conference facilities",
+        "Premium internet",
+        "Business lounge",
+        "Concierge services",
+        "Meeting rooms",
+        "Hot desks",
+        "Private offices"
+    ],
+    "stats": [
+        {
+            "label": "Conference Room",
+            "value": "10"
+        },
+        {
+            "label": "Co Working Space",
+            "value": "20"
+        },
+        {
+            "label": "Training Room",
+            "value": "30"
+        },
+        {
+            "label": "Private Office",
+            "value": "3"
+        }
+    ]
+}
