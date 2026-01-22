@@ -73,7 +73,7 @@ defineProps<{
 
           <button 
             class="w-full rounded-full px-6 py-4 text-base font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-            @click="navigateTo('/contact')"
+            @click="navigateTo('/#contact')"
             :class="[
               popular 
                 ? 'bg-[#E60000] text-white hover:bg-[#E60000] shadow-[#E60000]/20' 
